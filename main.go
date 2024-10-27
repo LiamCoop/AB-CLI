@@ -124,9 +124,10 @@ func main() {
 	CreateCmd.Flags().String("type", "Task", "Type of work item (Task, Bug, etc.)")
 	CreateCmd.MarkFlagRequired("title")
 
-	rootCmd.AddCommand(ListCmd)
+    rootCmd.AddCommand(ListIterationsCmd)
+	rootCmd.AddCommand(ListWorkItemsCmd)
 	rootCmd.AddCommand(CreateCmd)
-	rootCmd.AddCommand(GetCmd)
+	rootCmd.AddCommand(GetWorkItemsCmd)
 
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err)
